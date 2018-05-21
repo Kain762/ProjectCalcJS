@@ -58,6 +58,7 @@ table td:hover{
     background-color: #616161;
     border-radius: 5px;
     color: #e5ffed;
+    transition: 0.5s;
 }
 
 table#tableUp{
