@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,gBAAgB,EAAE,OAAO",
+"sources": ["styleCalc.scss"],
+"names": [],
+"file": "styleCalc.css"
+}
