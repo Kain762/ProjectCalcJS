@@ -1,0 +1,81 @@
+$width: 500px;
+$height: 600px;
+$padding-horiz: 20px;
+$padding-vert: 15px;
+$btnHeight: $height / 10.5;
+$btnWidth: $width / 4;
+$radius: 5px;
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #9c9c9c;
+}
+
+div#calc {
+  width: $width;
+  background-color: #525252;
+  margin: 0 auto;
+  border: 2px solid #4c4c4c;
+  border-radius: $radius;
+}
+
+div#box{
+  @extend div#calc;
+  height: 1200px;
+  width: 1000px;
+  padding-top: 50px;
+}
+/////////////////////
+div.output {
+  width: $width - $padding-horiz * 2;
+  padding: $padding-vert $padding-horiz;
+  background-color: #292929;
+}
+
+div#header {
+  height: $btnHeight - $padding-vert * 2;
+  border-radius: $radius $radius 0 0;
+  font-weight: bold;
+  color: #e5ffed;
+}
+
+div#display {
+  display: table-cell;
+  height: $btnHeight * 2 - $padding-vert * 2;
+  border-radius: 0 0 $radius $radius;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: ($btnHeight * 2 - $padding-vert * 2) / 2;
+  color: #fffaf0;
+}
+/////////////////////////
+table.input {
+  border-collapse: collapse;
+  width: $width;
+
+  & td {
+    width: $btnWidth;
+    height: $btnHeight;
+    text-align: center;
+    font-weight: bold;
+    color: #fff8dc;
+
+    &:hover {
+      background-color: #616161;
+      border-radius: $radius;
+      color: #e5ffed;
+      transition: 100ms;
+    }
+  }
+}
+table#tableUp {
+  margin-top: round($btnHeight / 3);
+  height: $btnHeight * 2;
+  border-bottom: 5px solid #4c4c4c;
+}
+
+table#tableDown {
+  height: $btnHeight * 5;
+}
+
