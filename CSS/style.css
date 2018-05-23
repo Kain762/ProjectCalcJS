@@ -6,7 +6,9 @@ body {
 div#calc, div#box {
   width: 500px;
   background-color: #525252;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: 2px solid #4c4c4c;
+  border-radius: 5px; }
 
 div#box {
   height: 1200px;
@@ -19,19 +21,18 @@ div.output {
   background-color: #292929; }
 
 div#header {
-  height: 45px;
+  height: 27.1428571429px;
   border-radius: 5px 5px 0 0;
   font-weight: bold;
   color: #e5ffed; }
 
 div#display {
   display: table-cell;
-  height: 120px;
+  height: 84.2857142857px;
   border-radius: 0 0 5px 5px;
-  margin-bottom: 37.5px;
   text-align: right;
   vertical-align: bottom;
-  font-size: 60px;
+  font-size: 42.1428571429px;
   color: #fffaf0; }
 
 table.input {
@@ -39,7 +40,7 @@ table.input {
   width: 500px; }
   table.input td {
     width: 125px;
-    height: 75px;
+    height: 57.1428571429px;
     text-align: center;
     font-weight: bold;
     color: #fff8dc; }
@@ -50,10 +51,11 @@ table.input {
       transition: 100ms; }
 
 table#tableUp {
-  height: 150px;
-  border-bottom: 3px solid #292929; }
+  margin-top: 19px;
+  height: 114.2857142857px;
+  border-bottom: 5px solid #4c4c4c; }
 
 table#tableDown {
-  height: 375px; }
+  height: 285.7142857143px; }
 
 /*# sourceMappingURL=style.css.map */

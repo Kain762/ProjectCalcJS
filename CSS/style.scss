@@ -1,8 +1,9 @@
+$width: 500px;
+$height: 600px;
 $padding-horiz: 20px;
 $padding-vert: 15px;
-$btnHeight: 75px;
-$btnWidth: 125px;
-$width: $btnWidth * 4;
+$btnHeight: $height / 10.5;
+$btnWidth: $width / 4;
 $radius: 5px;
 
 body {
@@ -15,6 +16,8 @@ div#calc {
   width: $width;
   background-color: #525252;
   margin: 0 auto;
+  border: 2px solid #4c4c4c;
+  border-radius: $radius;
 }
 
 div#box{
@@ -23,7 +26,7 @@ div#box{
   width: 1000px;
   padding-top: 50px;
 }
-
+/////////////////////
 div.output {
   width: $width - $padding-horiz * 2;
   padding: $padding-vert $padding-horiz;
@@ -41,13 +44,12 @@ div#display {
   display: table-cell;
   height: $btnHeight * 2 - $padding-vert * 2;
   border-radius: 0 0 $radius $radius;
-  margin-bottom: $btnHeight / 2;
   text-align: right;
   vertical-align: bottom;
   font-size: ($btnHeight * 2 - $padding-vert * 2) / 2;
   color: #fffaf0;
 }
-
+/////////////////////////
 table.input {
   border-collapse: collapse;
   width: $width;
@@ -68,8 +70,9 @@ table.input {
   }
 }
 table#tableUp {
+  margin-top: round($btnHeight / 3);
   height: $btnHeight * 2;
-  border-bottom: 3px solid #292929;
+  border-bottom: 5px solid #4c4c4c;
 }
 
 table#tableDown {
