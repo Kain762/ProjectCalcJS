@@ -35,6 +35,10 @@ let changeBtn = (btnID) => {
         case "dot":
             dotPoint();
             break;
+         // очистка последнего ввода
+        case "c":
+            displayClear();
+            break;
     }
 };
 //печать чисел
@@ -73,4 +77,9 @@ let dotPoint = () => {
     if (!(texStr.indexOf(".") >= 0) && (displayOverflow())) {
         display.innerText += ".";
     }
+};
+
+// очистка
+let displayClear = () => {
+    display.innerText = "";
 };
