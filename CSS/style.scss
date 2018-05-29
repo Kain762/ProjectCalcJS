@@ -42,12 +42,19 @@ div#header {
 
 div#display {
   display: table-cell;
-  height: $btnHeight * 2 - $padding-vert * 2;
+  height: $btnHeight - $padding-vert ;
   border-radius: 0 0 $radius $radius;
   text-align: right;
   vertical-align: bottom;
-  font-size: ($btnHeight * 2 - $padding-vert * 2) / 2;
+  font-size: ($btnHeight - $padding-vert * 2);
   color: #fffaf0;
+}
+
+div#buffer {
+  height: $btnHeight - $padding-vert ;
+  font-size: ($btnHeight - $padding-vert * 2) / 2;
+  color: floralwhite;
+  padding: 0 $padding-horiz;
 }
 /////////////////////////
 table.input {
