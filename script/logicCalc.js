@@ -42,6 +42,7 @@ let changeBtn = (btnID) => {
          // очистка последнего ввода
         case "c":
             displayClear();
+            memoryClear();
             break;
         // математика
         case "division":
@@ -60,6 +61,8 @@ let changeBtn = (btnID) => {
 let printNum = (btnID) => {
     if (flagResult) {
         displayClear();
+        memoryClear();
+        flagResult = false;
     }
 
     let numDec = btnID.substr(3);
@@ -80,6 +83,12 @@ let displayOverflow = () => {
 };
 //знак числа
 let numMark = () => {
+    if (flagResult) {
+        displayClear();
+        memoryClear();
+        flagResult = false;
+    }
+
     let textStr = display.innerText;
     if (textStr.slice(0, 1) === "-") {
         //console.log("numMark -");
@@ -105,7 +114,15 @@ let displayClear = () => {
 };
 // математика
 let mathLog = (btnID)=> {
-    if (!(buffer && operation)) {
+    if (display.innerText === ""){
+        return;
+    }
+    if (flagResult) {
+        memoryClear();
+        displayClear();
+        return;
+    }
+    if (!(buffer || operation)) {
         buffer = display.innerText;
     } else {
         buffer = result(buffer, display.innerText, operation);
@@ -151,12 +168,28 @@ let symbolOperation = () => {
 };
 //кнопка равно
 let btnResult = () => {
-    displayBuffer.innerText += " " + display.innerText;
+    if (flagResult) {
+        display.innerText = result(display.innerText, buffer, operation);
 
-    if (buffer) {
-        display.innerText = result(buffer, display.innerText, operation);
-        buffer = "";
-        operation = "";
+
+    } else {
+        if (operation) {
+            displayBuffer.innerText += " " + display.innerText;
+        }
+
+        if (buffer) {
+            if (display.innerText === "") {
+                return;
+            }
+           // buffer = display.innerText;
+            display.innerText = result(buffer, display.innerText, operation);
+        }
+        flagResult = true;
     }
-    flagResult = true;
+
+
+};
+let memoryClear = () => {
+    buffer = "";
+    operation = "";
 };
