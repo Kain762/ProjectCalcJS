@@ -181,8 +181,9 @@ let btnResult = () => {
             if (display.innerText === "") {
                 return;
             }
-           // buffer = display.innerText;
+            let buff1 = display.innerText;
             display.innerText = result(buffer, display.innerText, operation);
+            buffer  =buff1;
         }
         flagResult = true;
     }
